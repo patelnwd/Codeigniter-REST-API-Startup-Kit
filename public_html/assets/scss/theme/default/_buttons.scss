@@ -1,0 +1,168 @@
+@mixin btnM-hover($bg-color, $fg-color){
+	&:hover,&:focus{
+		color: $fg-color !important;
+		transition: background-color 0.1s ease;
+		background-color: darken($bg-color,10%);
+		text-decoration:none;
+	}	
+}
+
+@mixin create-btnM-normal($type){
+	@if $type == "default"{		
+		$bg-color: $color-default;
+		$fg-color: $base-color-white;
+		.btnM-default{
+			background-color:$bg-color;
+			color:$fg-color;
+			@include btnM-hover($bg-color, $fg-color);	
+		}
+	}
+	@elseif $type == "success"{
+		$bg-color: $color-success;
+		$fg-color: $base-color-white;
+		.btnM-success{
+			background-color:$bg-color;
+			color:$fg-color;
+			@include btnM-hover($bg-color, $fg-color);	
+		}
+	}
+	@elseif $type == "danger"{
+		$bg-color: $color-danger;
+		$fg-color: $base-color-white;
+		.btnM-danger{
+			background-color:$bg-color;
+			color:$fg-color;
+			@include btnM-hover($bg-color, $fg-color);	
+		}
+	}
+	@elseif $type == "warning"{
+		$bg-color: $color-warning;
+		$fg-color: $base-color-white;
+		.btnM-warning{
+			background-color:$bg-color;
+			color:$fg-color;
+			@include btnM-hover($bg-color, $fg-color);		
+		}
+	}
+	@elseif $type == "info"{
+		$bg-color: $color-info;
+		$fg-color: $base-color-white;
+		.btnM-info{
+			background-color:$bg-color;
+			color:$fg-color;
+			@include btnM-hover($bg-color, $fg-color);		
+		}
+	}
+	@elseif $type == "theme"{
+		$bg-color: $color-theme;
+		$fg-color: $base-color-white;
+		.btnM-theme{
+			background-color:$bg-color;
+			color:$fg-color;			
+			@include btnM-hover($bg-color, $fg-color);		
+		}
+	}	
+	@elseif $type == "gray"{
+		$bg-color: lighten($base-color-black, 10%);
+		$fg-color: darken($base-color-white,20%);
+		.btnM-gray{
+			background-color:$bg-color;
+			color:$fg-color;
+			@include btnM-hover($bg-color, $fg-color);		
+		}
+	}	
+}
+
+@mixin create-btnM-social(){
+	.btnM-facebook{
+		background-color:$color-facebook;
+		color:$base-color-white;		
+		@include btnM-hover($color-facebook, $base-color-white);	
+	}
+	.btnM-google{
+		background-color:$color-googleplus;
+		color:$base-color-white;
+		@include btnM-hover($color-googleplus, $base-color-white);	
+	}
+	.btnM-twitter{
+		background-color:$color-twitter;
+		color:$base-color-white;
+		@include btnM-hover($color-twitter, $base-color-white);	
+	}
+}
+
+
+.btnM{
+	text-transform: uppercase;
+	border: none;
+	padding: 10px 15px;
+	border-radius: 3px;
+	background-color: lighten($base-color, 80%);
+	color: lighten($base-color, 20%);	
+	-webkit-box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+	box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	transition: all 0.4s;
+	margin:2px;
+	@include btnM-hover(lighten($base-color,70%), lighten($base-color, 20%));	
+}
+
+.btnM-xs{
+	padding: 10px 8px;
+	font-size:11px;	
+}
+
+@include create-btnM-social();
+@include create-btnM-normal('default');
+@include create-btnM-normal('success');
+@include create-btnM-normal('danger');
+@include create-btnM-normal('warning');
+@include create-btnM-normal('info');
+@include create-btnM-normal('theme');
+@include create-btnM-normal('gray');
+
+
+
+.btnM-search{
+	$bg-color: lighten($base-color-black, 20%);
+	$fg-color: lighten($base-color-black,80%);
+	background-color:$bg-color;
+	color:$fg-color;
+	font-size:17px;
+	@include btnM-hover($bg-color, $fg-color)
+}
+
+.btnM-round{	
+	border-radius:50px;
+}
+
+.btnM-wide{
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+
+.post-free-add-btn {
+	border-radius: 30px;
+	bottom: 10px;
+	font-size: 22px;
+	height: 50px;
+	position: fixed;
+	right: 14px;
+	width: 50px;
+	background-color: darken($color-theme, 15%);
+}
+
+#back-to-top {
+	border-radius: 25px;
+	bottom: 24px;
+	font-size: 17px;
+	height: 38px;
+	line-height: 34px;
+	padding: 0;
+	position: fixed;
+	right: 20px;
+	text-align: center;
+	width: 38px;
+}

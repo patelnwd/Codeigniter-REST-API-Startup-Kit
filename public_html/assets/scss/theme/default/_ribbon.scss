@@ -1,0 +1,317 @@
+.ribbon {
+	position: absolute;
+	display: inline-block;
+	padding: 5px 20px 5px 20px;
+	font-size: 10px;
+	font-weight: bold;
+	z-index: 3;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+@mixin ribbon-color($bg-color, $fg-color) {
+	background-color: $bg-color;
+	color: $fg-color;
+}
+
+@mixin ribbon-hook-right-bottom($bg-color, $fg-color) {
+	@include ribbon-color($bg-color, $fg-color);
+	&:before, &:after {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 24px;
+		width: 0;
+		height: 0;
+		border-top: 7px solid darken($bg-color, 15%);
+		border-right: 7px solid transparent;
+		z-index: -2;
+	}
+}
+
+@mixin ribbon-hook-right-top($bg-color, $fg-color) {
+	@include ribbon-color($bg-color, $fg-color);
+	&:before, &:after {
+		content: '';
+		position: absolute;
+		right: 0;
+		bottom: 24px;
+		width: 0;
+		height: 0;
+		border-bottom: 8px solid darken($bg-color, 15%);
+		border-right: 8px solid transparent;
+		z-index: -2;
+	}
+}
+
+@mixin ribbon-hook-left-bottom($bg-color, $fg-color) {
+	@include ribbon-color($bg-color, $fg-color);
+	&:before, &:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 24px;
+		width: 0;
+		height: 0;
+		border-top: 8px solid darken($bg-color, 15%);
+		border-left: 8px solid transparent;
+		z-index: -2;
+	}
+}
+
+@mixin ribbon-hook-left-top($bg-color, $fg-color) {
+	@include ribbon-color($bg-color, $fg-color);
+	&:before, &:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 24px;
+		width: 0;
+		height: 0;
+		border-bottom: 8px solid darken($bg-color, 15%);
+		border-left: 8px solid transparent;
+		z-index: -2;
+	}
+}
+
+@mixin generate-ribbon-set($group) {
+	@if $group == "default" {
+		$bg-color: $color-default;
+		$fg-color: $base-color-white;
+		.ribbon-left-top-default {
+			left: 8px;
+			top: 15px;
+			@include ribbon-hook-left-bottom($bg-color, $fg-color);
+		}
+		
+		.ribbon-right-top-default {
+			right: 8px;
+			top: 15px;
+			@include ribbon-hook-right-bottom($bg-color, $fg-color);
+		}
+		
+		.ribbon-left-bottom-default {
+			left: 8px;
+			bottom: 15px;
+			@include ribbon-hook-left-top($bg-color, $fg-color);
+		}
+		
+		.ribbon-right-bottom-default {
+			right: 8px;
+			bottom: 15px;
+			@include ribbon-hook-right-top($bg-color, $fg-color);
+		}
+	} @else if $group == "danger" {
+		$bg-color: $color-danger;
+		$fg-color: $base-color-white;
+		.ribbon-left-top-danger {
+			left: 8px;
+			top: 15px;
+			@include ribbon-hook-left-bottom($bg-color, $fg-color);
+		}
+		
+		.ribbon-right-top-danger {
+			right: 8px;
+			top: 15px;
+			@include ribbon-hook-right-bottom($bg-color, $fg-color);
+		}
+		
+		.ribbon-left-bottom-danger {
+			left: 8px;
+			bottom: 15px;
+			@include ribbon-hook-left-top($bg-color, $fg-color);
+		}
+		
+		.ribbon-right-bottom-danger {
+			right: 8px;
+			bottom: 15px;
+			@include ribbon-hook-right-top($bg-color, $fg-color);
+		}
+	} @else if $group == "warning" {
+		$bg-color: $color-warning;
+		$fg-color: $base-color-white;
+		.ribbon-left-top-warning {
+			left: 8px;
+			top: 15px;
+			@include ribbon-hook-left-bottom($bg-color, $fg-color);
+		}
+		
+		.ribbon-right-top-warning {
+			right: 8px;
+			top: 15px;
+			@include ribbon-hook-right-bottom($bg-color, $fg-color);
+		}
+		
+		.ribbon-left-bottom-warning {
+			left: 8px;
+			bottom: 15px;
+			@include ribbon-hook-left-top($bg-color, $fg-color);
+		}
+		
+		.ribbon-right-bottom-warning {
+			right: 8px;
+			bottom: 15px;
+			@include ribbon-hook-right-top($bg-color, $fg-color);
+		}
+	} @else if $group == "info" {
+		$bg-color: $color-info;
+		$fg-color: $base-color-white;
+		.ribbon-left-top-info {
+			left: 8px;
+			top: 15px;
+			@include ribbon-hook-left-bottom($bg-color, $fg-color);
+		}
+		
+		.ribbon-right-top-info {
+			right: 8px;
+			top: 15px;
+			@include ribbon-hook-right-bottom($bg-color, $fg-color);
+		}
+		
+		.ribbon-left-bottom-info {
+			left: 8px;
+			bottom: 15px;
+			@include ribbon-hook-left-top($bg-color, $fg-color);
+		}
+		
+		.ribbon-right-bottom-info {
+			right: 8px;
+			bottom: 15px;
+			@include ribbon-hook-right-top($bg-color, $fg-color);
+		}
+	} @else if $group == "success" {
+		$bg-color: $color-success;
+		$fg-color: $base-color-white;
+		.ribbon-left-top-success {
+			left: 8px;
+			top: 15px;
+			@include ribbon-hook-left-bottom($bg-color, $fg-color);
+		}
+		
+		.ribbon-right-top-success {
+			right: 8px;
+			top: 15px;
+			@include ribbon-hook-right-bottom($bg-color, $fg-color);
+		}
+		
+		.ribbon-left-bottom-success {
+			left: 8px;
+			bottom: 15px;
+			@include ribbon-hook-left-top($bg-color, $fg-color);
+		}
+		
+		.ribbon-right-bottom-success {
+			right: 8px;
+			bottom: 15px;
+			@include ribbon-hook-right-top($bg-color, $fg-color);
+		}
+	} @else if $group == "gray" {
+		$bg-color: lighten($base-color-black, 80%);
+		$fg-color: darken($base-color-white, 80%);
+		.ribbon-left-top-gray {
+			left: 8px;
+			top: 15px;
+			@include ribbon-hook-left-bottom($bg-color, $fg-color);
+		}
+		
+		.ribbon-right-top-gray {
+			right: 8px;
+			top: 15px;
+			@include ribbon-hook-right-bottom($bg-color, $fg-color);
+		}
+		
+		.ribbon-left-bottom-gray {
+			left: 8px;
+			bottom: 15px;
+			@include ribbon-hook-left-top($bg-color, $fg-color);
+		}
+		
+		.ribbon-right-bottom-gray {
+			right: 8px;
+			bottom: 15px;
+			@include ribbon-hook-right-top($bg-color, $fg-color);
+		}
+	} @else if $group == "theme" {
+		$bg-color: $color-theme;
+		$fg-color: $base-color-white;
+		.ribbon-left-top-theme {
+			left: 8px;
+			top: 15px;
+			@include ribbon-hook-left-bottom($bg-color, $fg-color);
+		}
+		
+		.ribbon-right-top-theme {
+			right: 8px;
+			top: 15px;
+			@include ribbon-hook-right-bottom($bg-color, $fg-color);
+		}
+		
+		.ribbon-left-bottom-theme {
+			left: 8px;
+			bottom: 15px;
+			@include ribbon-hook-left-top($bg-color, $fg-color);
+		}
+		
+		.ribbon-right-bottom-theme {
+			right: 8px;
+			bottom: 15px;
+			@include ribbon-hook-right-top($bg-color, $fg-color);
+		}
+	}
+}
+
+@include generate-ribbon-set('default');
+@include generate-ribbon-set('success');
+@include generate-ribbon-set('danger');
+@include generate-ribbon-set('warning');
+@include generate-ribbon-set('info');
+@include generate-ribbon-set('gray');
+@include generate-ribbon-set('theme');
+
+@mixin ribbon-flat-angle($bg-color, $fg-color) {
+	@include ribbon-color($bg-color, $fg-color);
+}
+
+.ribbon-overlay {
+	position: absolute;
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+	margin-top: 5px;
+	top: 10px;
+	> li {
+		list-style-type: none;
+		padding: 5px 20px 5px 15px;
+		margin-bottom: 4px;
+		a {
+			color: $base-color-white;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+	}
+}
+
+.ribbon-overlay {
+	> .ribbon-default {
+		@include ribbon-flat-angle($color-danger, $base-color-white);
+		&:after {
+			width: 100%;
+			height: 100%;
+			left: 0px;
+			top: 0px;
+			background: linear-gradient(to right bottom, black 50%, transparent 50%)
+		}
+	}
+	> .ribbon-default {
+		@include ribbon-flat-angle($color-primary-0, $base-color-white);
+		&:after {
+			width: 100%;
+			height: 100%;
+			left: 0px;
+			top: 0px;
+			background: linear-gradient(to right bottom, black 50%, transparent 50%)
+		}
+	}
+}
+
+

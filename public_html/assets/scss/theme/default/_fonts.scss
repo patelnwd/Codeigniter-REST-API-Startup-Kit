@@ -1,0 +1,30 @@
+@mixin create-font1-css(){
+	@font-face {
+		font-family: MontserratRegular;
+		src: url('../fonts/Montserrat/Montserrat-Regular.ttf');
+	}
+	@font-face {
+		font-family: MontserratThin;
+		src: url('../fonts/Montserrat/Montserrat-Thin.ttf');
+	}
+	@font-face {
+		font-family: MontserratMedium;
+		src: url('../fonts/Montserrat/Montserrat-Medium.ttf');
+	}
+}
+@mixin create-font2-css(){
+	@font-face {
+		font-family: LatoRegular;
+		src: url('../fonts/Lato/Lato-Regular.ttf');
+	}
+	@font-face {
+		font-family: LatoLight;
+		src: url('../fonts/Lato/Lato-Light.ttf');
+	}
+	@font-face {
+		font-family: LatoHairline;
+		src: url('../fonts/Lato/Lato-Hairline.ttf');
+	}
+}
+@include create-font1-css();
+@include create-font2-css();

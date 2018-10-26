@@ -1,0 +1,391 @@
+@mixin create-tag-color($bg-color, $fg-color) {
+	background-color: $bg-color;
+	border: 1px solid darken($bg-color, 5%);
+	color: $fg-color;
+}
+
+.card {
+	border-radius: 8px;
+	border: 1px solid lighten($default-border-color, 5%);
+	margin: 10px 0px;
+}
+
+.card-default {
+	position: relative;
+	> .card-image {
+		overflow: hidden;
+		background: url('../../images/item-back.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		position: relative;
+		border-radius: 8px 8px 0px 0px;
+		> .hyperlink {
+			> img.item-image {
+				border-radius: 8px 8px 0px 0px;
+				display: inline-block;
+				vertical-align: middle;
+				height: 190px;
+				width: 100%;
+			}
+			.card-title {
+				padding: 7px;
+				background: rgba(0, 0, 0, 0.7);
+				color: $base-color-white;
+				width: 100%;
+				h5 {
+					line-height: 18px;
+					margin: 2px;
+					padding: 2px;
+					height: 40px;
+					overflow: hidden;
+				}
+			}
+		}
+	}
+	> .card-overlay {
+		position: absolute;
+		width: 95%;
+		top: 10px;
+		left: 5px;
+		> ul {
+			list-style-type: none;
+			margin: 0px;
+			padding: 0px;
+		}
+		> ul.tag-list {
+			float: left;
+			> li {
+				margin-bottom: 3px;
+				> a.tag {
+					padding: 3px 12px;
+					border-radius: 30px;
+					font-size: 11px;
+					letter-spacing: 1px;
+					font-weight: normal;
+					margin-bottom: 5px !important;
+				}
+				.tag-default {
+					@include create-tag-color($color-default, $base-color-white);
+				}
+				.tag-success {
+					@include create-tag-color($color-success, $base-color-white);
+				}
+				.tag-warning {
+					@include create-tag-color($color-warning, $base-color-white);
+				}
+				.tag-danger {
+					@include create-tag-color($color-danger, $base-color-white);
+				}
+				.tag-info {
+					@include create-tag-color($color-info, $base-color-white);
+				}
+				.tag-gray {
+					@include create-tag-color(lighten($base-color-black, 30%), darken($base-color-white, 10%));
+				}
+				.tag-theme {
+					@include create-tag-color($color-theme, $base-color-white);
+				}
+			}
+		}
+		> ul.action-list {
+			float: right;
+			right: 0px;
+			top: 5px;
+			> li {
+				margin-bottom: 15px;
+				> a {
+					padding: 8px;
+					border-radius: 100px;
+					background: rgba($base-color-black, 0.5);
+					color: $base-color-white;
+					&:hover, &:focus {
+						color: lighten($color-warning, 20%);
+					}
+				}
+			}
+		}
+	}
+}
+
+.card-vertical {
+	position: relative;
+	> .card-image {
+		overflow: hidden;
+		background: url('../../images/item-back.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		position: relative;
+		border-radius: 8px 8px 0px 0px;
+		> .hyperlink {
+			> img.item-image {
+				border-radius: 8px 8px 0px 0px;
+				display: inline-block;
+				vertical-align: middle;
+				height: 300px;
+				width: 100%;
+			}
+			.card-title {
+				position: absolute;
+				padding: 7px;
+				background: rgba(0, 0, 0, 0.5);
+				color: $base-color-white;
+				width: 100%;
+				bottom: 0px;
+				h5 {
+					line-height: 18px;
+					margin: 2px;
+					padding: 2px;
+					height: 40px;
+					overflow: hidden;
+				}
+			}
+		}
+	}
+	> .card-overlay {
+		position: absolute;
+		width: 95%;
+		top: 10px;
+		left: 5px;
+		> ul {
+			list-style-type: none;
+			margin: 0px;
+			padding: 0px;
+		}
+		> ul.tag-list {
+			float: left;
+			> li {
+				margin-bottom: 3px;
+				> a.tag {
+					padding: 3px 12px;
+					border-radius: 30px;
+					font-size: 11px;
+					letter-spacing: 1px;
+					font-weight: normal;
+					margin-bottom: 5px !important;
+				}
+				.tag-default {
+					@include create-tag-color($color-default, $base-color-white);
+				}
+				.tag-success {
+					@include create-tag-color($color-success, $base-color-white);
+				}
+				.tag-warning {
+					@include create-tag-color($color-warning, $base-color-white);
+				}
+				.tag-danger {
+					@include create-tag-color($color-danger, $base-color-white);
+				}
+				.tag-info {
+					@include create-tag-color($color-info, $base-color-white);
+				}
+				.tag-gray {
+					@include create-tag-color(lighten($base-color-black, 30%), darken($base-color-white, 10%));
+				}
+				.tag-theme {
+					@include create-tag-color($color-theme, $base-color-white);
+				}
+			}
+		}
+		> ul.action-list {
+			float: right;
+			right: 0px;
+			top: 5px;
+			> li {
+				margin-bottom: 15px;
+				> a {
+					padding: 8px;
+					border-radius: 100px;
+					background: rgba($base-color-black, 0.5);
+					color: $base-color-white;
+					&:hover, &:focus {
+						color: lighten($color-warning, 20%);
+					}
+				}
+			}
+		}
+	}
+}
+
+.card-horizontal {
+	position: relative;
+	> .card-image {
+		position: relative;
+		width: 250px;
+		overflow: hidden;
+		background: url('../../images/item-back.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		float: left;
+		> .hyperlink {
+			> img.item-image {
+				border-radius: 8px 8px 0px 0px;
+				width: 100%;
+				display: inline-block;
+				vertical-align: middle;
+				max-height: 100%;
+				max-width: 100%;
+			}
+		}
+	}
+	> .card-details {
+		left: 250px;
+	}
+}
+
+.card-profile-default {
+	position: relative;
+	> .card-header {
+		//padding-bottom: 50px;
+		border-bottom: 3px solid $base-color-white;
+		> .card-background {
+			background: linear-gradient(rgba($base-color-black, 0.70), rgba($base-color-black, 0.70)),
+			url(../../images/bg2.jpg) no-repeat;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			height: 150px;
+			border-radius: 8px 8px 0px 0px;
+		}
+	}
+	> .card-body {
+		padding: 5px;
+		text-align: center;
+		//margin-top: 50px;
+		> .profile-image {
+			//position: absolute;
+			width: 60px;
+			height: 60px;
+			margin-left: calc(50% - 60px / 2);
+			margin-top: -40px;
+			border-radius: 100%;
+			background: $color-light-gray;
+			margin-bottom: 10px;
+			img {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				width: 100%;
+				height: 100%;
+				border-radius: 100%;
+				border: 3px solid $base-color-white;
+			}
+		}
+		> .profile-name {
+			margin: auto;
+			font-size: 20px;
+			color: $color-theme;
+		}
+		> .profile-profession {
+			padding: 4px 0px;
+			font-size: 12px;
+			color: $color-gray;
+		}
+		> .profile-detail {
+			color: $color-gray;
+			padding: 5px;
+			text-overflow: ellipsis;
+		}
+	;
+	}
+	> .card-footer {
+		padding: 15px 8px;
+		background-color: $color-light-gray;
+		border-radius: 0px 0px 8px 8px;
+	}
+}
+
+.card-profile-primary {
+	position: relative;
+	> .card-header {
+		//padding-bottom: 50px;
+		border-bottom: 3px solid $base-color-white;
+		> .card-background {
+			background: linear-gradient(rgba($base-color-black, 0.70), rgba($base-color-black, 0.70)),
+			url(../../images/bg3.jpg) no-repeat;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			height: 150px;
+			border-radius: 8px 8px 0px 0px;
+		}
+	}
+	> .card-body {
+		padding: 5px;
+		text-align: center;
+		//margin-top: 50px;
+		> .profile-image {
+			//position: absolute;
+			width: 60px;
+			height: 60px;
+			margin-left: calc(50% - 60px / 2);
+			margin-top: -40px;
+			border-radius: 100%;
+			background: $color-light-gray;
+			margin-bottom: 10px;
+			img {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				width: 100%;
+				height: 100%;
+				border-radius: 100%;
+				border: 3px solid $base-color-white;
+			}
+		}
+		> .profile-name {
+			margin: auto;
+			font-size: 20px;
+			color: $color-theme;
+		}
+		> .profile-profession {
+			padding: 4px 0px;
+			font-size: 12px;
+			color: $color-gray;
+		}
+		> .profile-detail {
+			color: $color-gray;
+			padding: 5px;
+			text-overflow: ellipsis;
+		}
+	;
+	}
+	> .card-footer {
+		padding: 15px 8px;
+		background-color: $color-light-gray;
+		border-radius: 0px 0px 8px 8px;
+	}
+}
+
+.card-default, .card-vertical {
+	> .card-details {
+		padding: 20px 8px;
+		ul {
+			list-style: outside none none;
+			margin: 0px;
+			padding: 0px;
+			font-size: 14px;
+			font-family: 'MontserratRegular', sans-serif;
+			li {
+				padding: 2px 5px;
+				margin-bottom: 4px;
+				> a {
+					color: inherit;
+					&:hover, &:focus {
+						color: $color-theme;
+					}
+				}
+				i {
+					color: $default-border-color;
+					text-align: center;
+					width: 21px;
+				}
+			}
+		}
+	}
+}
+

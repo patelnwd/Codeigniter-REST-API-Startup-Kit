@@ -1,0 +1,199 @@
+.pointer{
+	cursor: pointer;
+}
+
+.pad-border-redius{
+	padding:20px;
+	border-radius: 8px;
+	border: 1px solid $default-border-color;
+}
+
+
+.required:after{
+	content:"*";
+	margin-left: 2px;
+	color:$color-danger;
+	font-weight: normal !important;
+	font-size: 18px;
+	position: absolute;
+}
+
+.radio{
+	font-weight:normal;
+}
+
+.avatar {
+	position: relative;
+	img{
+		width: 100%;
+	}
+}
+.btn-icon {
+	background: $color-theme none repeat scroll 0 0;
+	color: #ffffff !important;
+	font-size: 94px;
+	height: 100%;
+	line-height: 258px;
+	opacity: 0.05;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	transition: all 0.4s ease 0s;
+	border:8px 8px 0px 0px;
+	&:hover{
+		opacity: 0.7;
+	}
+	/* &:visited,&:active,&:focus{
+		opacity:0.05;
+	} */
+}
+
+.profile-info {
+	// background: rgba($base-color-black, 0.5) none repeat scroll 0 0;
+	background:
+	linear-gradient(rgba($color-theme, 0.70), rgba($color-theme, 0.70)),
+	url(../../images/review.jpg) no-repeat scroll center center / cover;
+	color: $base-color-white;
+	padding: 7px 17px;
+	width: 100%;
+	h2 {
+		margin: 0;
+		color: $base-color-white;
+	}
+	p {
+		color: $base-color-white;
+		// opacity: 0.6;
+	}
+}
+
+.list-group-item:first-child {
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+}
+a.list-group-item{
+	background-color: $color-theme;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border: 1px solid lighter($default-border-color, 20%) !important;
+	color: $base-color-white !important;
+	transition: background-color 0.2s ease;
+	&:hover,&:focus{
+		background-color: lighten($color-theme, 70%);
+		color: $color-theme !important;
+	}
+}
+
+.list-group{
+	.active{
+		background-color: lighten($color-theme, 70%);
+		color: $color-theme !important;
+		border: inherit;
+		&:hover,&:focus{
+			background-color: lighten($color-theme, 70%);
+			color: $color-theme !important;
+		}
+	}
+}
+
+
+
+/* favourite Ads */
+/* Table Design */
+.table-design{
+	tr{
+		>td:nth-child(1){
+			width:85px;
+			text-align: left;
+			img{
+				width:80px;
+				height:80px;
+				border-radius:100%;
+			}
+		}
+		>td:nth-child(2){
+			>.item-meta{
+
+			}
+		}
+		>td:last-child{
+			text-align: right;
+		}
+	}
+}
+
+
+/* Register Page */
+.input-otp{
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #555;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	-webkit-transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+	-o-transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+	transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+}
+
+label,.label {
+    font-weight: normal !important;
+}
+
+.bold{
+	font-weight: bold !important;
+}
+
+.myaccount-tab-content{
+	border:1px solid $border-color-light;
+	border-top: transparent;
+	> div{
+		//margin-top:-5px;
+		padding-bottom: 10px;
+		min-height:300px;
+	}
+}
+
+.setting-blocks{
+	//padding: 2px;
+	/*>.panel{
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}*/
+}
+
+/**
+	Google Location overwrite
+ */
+.pac-logo:after {
+	content: none !important;
+}
+
+.header-ribbon{
+	background-color:#E6E6E6;
+	div > div{
+		padding:4px 8px;
+		font-size: 14px;
+		font-family: 'LatoLight', sans-serif !important;
+		font-weight: bold;
+	}
+	.ribbon-address{
+		margin:5px;
+		color:#404040;
+	}
+	.ribbon-email{
+		margin:5px;
+		color: $color-primary-0;
+	}
+	.ribbon-phone{
+		margin:5px;
+	}
+}

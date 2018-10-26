@@ -1,0 +1,106 @@
+.search-box-title{
+	color:$color-theme;
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight:400px !important;
+	line-height: 1.2;		 
+}
+
+.search-box-sub-title{
+	color: $color-theme;
+	margin-bottom:35px;
+}
+
+.search-box-form-div{
+	padding:5px;
+	.search-input{
+		padding:2px;
+		// margin:2px;
+		> input,select{
+			border-radius: 4px;
+		}
+		>select{			
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			padding-left: 5px;
+			padding-right: 0\9;
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAJ1BMVEVmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmaP/QSjAAAADHRSTlMAAgMJC0uWpKa6wMxMdjkoAAAANUlEQVR4AeXJyQEAERAAsNl7Hf3X6xt0QL6JpZWq30pdvdadme+0PMdzvHm8YThHcT1H7K0BtOMDniZhWOgAAAAASUVORK5CYII=);
+			-webkit-background-size: 13px 13px;
+			background-size: 13px;
+			background-repeat: no-repeat;
+			background-position: right 8px center;
+			-webkit-box-shadow: inset 0 -1px 0 #ddd;
+			box-shadow: inset 0 -1px 0 #ddd;
+			font-size: 16px;
+			line-height: 1.5;
+		}
+
+	}
+	.search-btn{
+		// width:14%;
+		padding:0px !important;		
+		// margin:3px;
+		/* .btnM,.btnM-theme,.btn-block{
+			padding-top:12px 15px !important;
+		} */
+	}
+}
+
+@media (max-width: 768px) { 
+	.search-btn{
+		// width:98% !important;
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+}
+
+.top-categories{
+	//margin-top:30px;
+	display:                 flex;
+  	display:                 -webkit-flex; /* Safari 8 */
+  	flex-wrap:               wrap;
+  	-webkit-flex-wrap:       wrap;         /* Safari 8 */
+  	justify-content:         center;
+  	-webkit-justify-content: center;   
+	.top-categories-title{
+		text-transform: uppercase;
+		color:$base-color-white;
+	}
+	.top-categories-link{
+		background-color: darken($base-color-white, 10%);
+		padding: 14px 5px;
+		float: left;
+		width: 75px;
+		height: 75px;
+		margin: 4px;
+		border-radius:4px;
+		display: inline;
+		transition: background-color 0.5s ease; 		
+		color:$color-theme;		
+		&:hover{
+			background-color: $color-theme;			
+			color: $base-color-white;			
+		}
+	}
+	>label{
+		font-weight:normal;
+		>a{
+			background-color: darken($base-color-white, 15%) ;
+			border-radius: 2px;
+			color: $color-theme;
+			font-size: 12px;
+			letter-spacing: 0;
+			line-height: 30px;
+			padding: 6px 13px;
+			text-align: center;
+			transition: all 0.5s ease 0s;
+			&:hover{
+				background-color:darken($color-theme, 10%);
+				color: $base-color-white;
+			}
+		}
+	}
+}

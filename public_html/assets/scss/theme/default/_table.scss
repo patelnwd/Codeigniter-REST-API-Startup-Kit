@@ -1,0 +1,30 @@
+.tableM{
+	width: 100%;
+}
+
+.tableM-border-tb{		
+	tr{
+		border-bottom: 1px solid $default-border-color;
+		&:nth-child(odd){
+			background-color: lighten($color-gray,60%);
+		}
+		&:nth-child(even){
+		
+		}
+	}
+	td{
+		padding: 5px;
+	}
+	
+}
+
+.tableM-item-view{
+	img{
+		width:80px;
+		height: 80px;
+		border-radius: 100%;
+	}
+	td:last-child{
+		text-align: right;
+	}
+}

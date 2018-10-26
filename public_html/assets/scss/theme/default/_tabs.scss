@@ -1,0 +1,35 @@
+.tab {
+	> li {
+		position: relative;
+		a {
+			padding: 8px 5px;
+			font-weight: normal;
+			//color: $color-gray;
+		}
+	}
+	/*>li.active{
+		span{
+			position: absolute;
+			border-top:10px solid $color-gray;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom:10px solid transparent;
+			margin-top: 30px;
+			margin-left: -60px;
+		}
+	}*/
+}
+
+.sub-tab {
+	background-color: $color-light-gray;
+	padding: 5px 8px 12px 8px;
+	border-bottom:1px solid $default-border-color;
+}
+
+.tab-content-title{
+	background-color: lighten($color-light-gray,4%);
+	padding: 5px 8px 12px 8px;
+	color: darken($color-light-gray,55%);
+	font-size:18px;
+	font-weight: bold;
+}

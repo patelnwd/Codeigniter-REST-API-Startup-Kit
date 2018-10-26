@@ -1,0 +1,70 @@
+@mixin genrate-icon-tag($bg-color, $fg-color) {
+	span {
+		padding: 5px 10px !important;
+		color: $fg-color !important;
+		background-color: lighten($bg-color, 5%) !important;
+		font-size: 12px;
+		font-family: 'LatoLight', sans-serif;
+		letter-spacing:1px;
+	}
+	.icon {
+		border-radius: 3px 0px 0px 3px !important;
+		background-color: darken($bg-color, 8%) !important;
+		margin-right: 1px !important;
+	}
+	.text {
+		border-radius: 0px 3px 3px 0px !important;
+		padding-left: 8px !important;
+		margin-left: -5px !important;
+	}
+}
+
+.icon-tag-default {
+	margin: 4px;
+	@include genrate-icon-tag($color-default, $base-color-white);
+}
+
+.icon-tag-success {
+	margin: 4px;
+	@include genrate-icon-tag($color-success, $base-color-white);
+}
+
+.icon-tag-danger {
+	margin: 4px;
+	@include genrate-icon-tag($color-danger, $base-color-white);
+}
+
+.icon-tag-warning {
+	margin: 4px;
+	@include genrate-icon-tag($color-warning, $base-color-white);
+}
+
+.icon-tag-info {
+	margin: 4px;
+	@include genrate-icon-tag($color-info, $base-color-white);
+}
+.icon-tag-gray {
+	margin: 4px;
+	@include genrate-icon-tag(lighten($base-color,80%), lighten($base-color, 30%));
+}
+
+.icon-tag-theme {
+	margin: 4px;
+	@include genrate-icon-tag($color-theme, $base-color-white);
+}
+
+/* Tag Overlap */
+.icon-tag-overlap {
+	position: absolute;
+	margin-top: -11px;
+}
+.icon-tag-overlap-full{
+	position: absolute;
+	margin-top: -22px;
+}
+
+.icon-tag-overlap-up{
+	position: absolute;
+	margin-top: -22px + -5px;
+}
+

@@ -1,0 +1,25 @@
+.background-footer{
+	padding: 20px;
+	background-color: lighten($base-color,10%);
+	color:lighten($base-color,70%);
+}
+.background-copyright{
+	padding: 20px;
+	background-color: lighten($base-color,8%);	
+	padding-bottom: 0px !important;
+	color:lighten($base-color,80%);
+	font-size: 11px;		
+}
+
+.background-search{
+	background: rgba(73, 26, 165, .95) !important;		
+	padding: 20px 0;
+	color:white;	
+	text-align:center;
+}
+
+.background-theme{
+	background: $color-theme;
+	color: $base-color-white;
+}
+
