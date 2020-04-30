@@ -1,3 +1,4 @@
 
 logs/ci-conf.local-access.log
 logs/ci-conf.local-error.log
+public_html/vendor/*
