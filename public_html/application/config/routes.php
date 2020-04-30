@@ -49,13 +49,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'Homepage';
-$route['404_override'] = 'Error';
+$route['default_controller'] = 'welcome';
+$route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+// User API Routes
+$route['api/user/register'] = 'api/users/register';
+$route['api/user/login'] = 'api/users/login';
 
-/* Manage Application Routing MUKESH */
-$route['api'] = "api/doc";
-$route['api/(:any)'] = "api/$1";
-$route['user'] = "user/myAccount";
-$route['home-page/'] = "Homepage";
+// Users Article Routes
+$route['api/article/create'] = 'api/articles/createArticle';
+
+// Deleta an Article Routes
+# https://codeigniter.com/user_guide/general/routing.html#using-http-verbs-in-routes
+$route['api/article/(:num)/delete']["DELETE"] = 'api/articles/deleteArticle/$1';
+
+// Update and Article Route :: PUT API Request
+$route['api/article/update']["put"] = 'api/articles/updateArticle';

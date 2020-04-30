@@ -1,0 +1,7 @@
+{
+    "description": "This contains all the available ui libraray in this application. Through this we can build a config php file",
+    "type": "all Ui component lib will be listed here",
+    "libs": [
+
+    ]
+}

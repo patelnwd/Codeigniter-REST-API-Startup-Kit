@@ -83,8 +83,3 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
-
-
-/* User define CONSTANT for project use */
-defined('COMPANY_NAME')			OR define('COMPANY_NAME', 'NGo.in');
-defined('BASE_URL_API') OR define('BASE_URL_API', "http://".$_SERVER['SERVER_NAME']."/api/");
