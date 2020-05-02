@@ -53,16 +53,25 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+/**
+ * API demo routing (you can delete id you want) 
+ * @MukeshPatel 
+ */
+
+$route['api-demo'] = 'api-demo/documentation';
+
 // User API Routes
-$route['api/user/register'] = 'api/users/register';
-$route['api/user/login'] = 'api/users/login';
+$route['api-demo/user/register'] = 'api-demo/users/register';
+$route['api-demo/user/login'] = 'api-demo/users/login';
 
 // Users Article Routes
-$route['api/article/create'] = 'api/articles/createArticle';
+$route['api-demo/article/create'] = 'api-demo/articles/createArticle';
+$route['api-demo/article/get'] = 'api-demo/articles/getArticle/all';
+$route['api-demo/article/get/(:num)'] = 'api-demo/articles/getArticle/$1';
 
 // Deleta an Article Routes
 # https://codeigniter.com/user_guide/general/routing.html#using-http-verbs-in-routes
-$route['api/article/(:num)/delete']["DELETE"] = 'api/articles/deleteArticle/$1';
+$route['api-demo/article/(:num)/delete']["DELETE"] = 'api-demo/articles/deleteArticle/$1';
 
 // Update and Article Route :: PUT API Request
-$route['api/article/update']["put"] = 'api/articles/updateArticle';
+$route['api-demo/article/update']["put"] = 'api-demo/articles/updateArticle';

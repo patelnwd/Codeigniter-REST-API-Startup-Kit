@@ -9,7 +9,7 @@ class Users extends \Restserver\Libraries\REST_Controller
     public function __construct() {
         parent::__construct();
         // Load User Model
-        $this->load->model('user_model', 'UserModel');
+        $this->load->model('api-demo/user_model', 'UserModel');
     }
 
     /**
@@ -21,7 +21,7 @@ class Users extends \Restserver\Libraries\REST_Controller
      * @param: password
      * --------------------------
      * @method : POST
-     * @link : api/user/register
+     * @link : api-demo/user/register
      */
     public function register_post()
     {
@@ -91,7 +91,7 @@ class Users extends \Restserver\Libraries\REST_Controller
      * @param: password
      * --------------------------
      * @method : POST
-     * @link: api/user/login
+     * @link: api-demo/user/login
      */
     public function login_post()
     {

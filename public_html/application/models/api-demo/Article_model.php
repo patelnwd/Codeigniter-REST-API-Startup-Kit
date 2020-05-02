@@ -62,4 +62,16 @@ class Article_Model extends CI_Model
         }   
         return false;
     }
+
+    public function get_article($id = 'all'){
+        if(is_numeric($id) || $id === 'all'){         
+            if($id === 'all'){
+                $query = $this->db->get_where($this->article_table);
+            } else {
+                $query = $this->db->get_where($this->article_table, ['id'=> $id]);
+            }
+            return $query->result();
+        }
+        return false;
+    }
 }

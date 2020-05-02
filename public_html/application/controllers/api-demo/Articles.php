@@ -50,7 +50,7 @@ class Articles extends \Restserver\Libraries\REST_Controller
             else
             {
                 // Load Article Model
-                $this->load->model('article_model', 'ArticleModel');
+                $this->load->model('api-demo/article_model', 'ArticleModel');
 
                 $insert_data = [
                     'user_id' => $is_valid_token['data']->id,
@@ -116,7 +116,7 @@ class Articles extends \Restserver\Libraries\REST_Controller
             else
             {
                 // Load Article Model
-                $this->load->model('article_model', 'ArticleModel');
+                $this->load->model('api-demo/article_model', 'ArticleModel');
 
                 $delete_article = [
                     'id' => $id,
@@ -197,7 +197,7 @@ class Articles extends \Restserver\Libraries\REST_Controller
             else
             {
                 // Load Article Model
-                $this->load->model('article_model', 'ArticleModel');
+                $this->load->model('api-demo/article_model', 'ArticleModel');
 
                 $update_data = [
                     'user_id' => $is_valid_token['data']->id,
@@ -228,6 +228,41 @@ class Articles extends \Restserver\Libraries\REST_Controller
                 }
             }
 
+        } else {
+            $this->response(['status' => FALSE, 'message' => $is_valid_token['message'] ], REST_Controller::HTTP_NOT_FOUND);
+        }
+    }
+
+    public function getArticle_get($id = 'all'){
+        header("Access-Control-Allow-Origin: *");
+    
+        // Load Authorization Token Library
+        $this->load->library('Authorization_Token');
+
+        /**
+         * User Token Validation
+         */
+        $is_valid_token = $this->authorization_token->validateToken();
+        if (!empty($is_valid_token) AND $is_valid_token['status'] === TRUE){
+            $this->load->model('api-demo/article_model', 'ArticleModel');
+            $output = $this->ArticleModel->get_article($id);
+
+            if ($output > 0 AND !empty($output)){
+                // Success
+                $message = [
+                    'status' => true,
+                    'message' => "Article list",
+                    'data' => $output
+                ];
+                $this->response($message, REST_Controller::HTTP_OK);
+            } else {
+                // Error
+                $message = [
+                    'status' => FALSE,
+                    'message' => "Article not found"
+                ];
+                $this->response($message, REST_Controller::HTTP_NOT_FOUND);
+            }
         } else {
             $this->response(['status' => FALSE, 'message' => $is_valid_token['message'] ], REST_Controller::HTTP_NOT_FOUND);
         }

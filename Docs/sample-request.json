@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "7fdc9f03-7ed5-424d-a720-27317d83332b",
+		"name": "Codigniter-REST-API-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [		
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fullname",
+							"value": "Mukesh3",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "mukesh3",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "mukesh3@gmail.cop",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "mukesh3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ci-conf.local/api-demo/user/register",
+					"protocol": "http",
+					"host": [
+						"ci-conf",
+						"local"
+					],
+					"path": [
+						"api-demo",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": {
+                "success": {
+                    "status": true,
+                    "message": "User registration successful"
+                },
+                "error": {
+                    "status": false,
+                    "error": {
+                        "username": "This Username already exists please enter another username",
+                        "email": "This Email already exists please enter another email address",
+                        "password": "The Password field is required."
+                    },
+                    "message": "<p>This Username already exists please enter another username</p>\n<p>This Email already exists please enter another email address</p>\n<p>The Password field is required.</p>\n"
+                }
+            }
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "mukesh3",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "mukesh3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ci-conf.local/api-demo/user/login",
+					"protocol": "http",
+					"host": [
+						"ci-conf",
+						"local"
+					],
+					"path": [
+						"api-demo",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": {
+                "success": {
+                    "status": true,
+                    "data": {
+                        "user_id": "1",
+                        "full_name": "Mukesh Patel",
+                        "email": "name@domain.com",
+                        "created_at": "1588399262",
+                        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEiLCJmdWxsX25hbWUiOiJNdWtlc2ggUGF0ZWwiLCJ1c2VybmFtZSI6Im11a2VzaCIsImVtYWlsIjoibmFtZUBkb21haW4uY29tIiwiY3JlYXRlZF9hdCI6IjE1ODgzOTkyNjIiLCJ1cGRhdGVkX2F0IjoiMTU4ODM5OTI2MiIsInRpbWUiOjE1ODgzOTkzODh9.k4cY-ptkwUQJKcKAg4wzwD7Ivt3GquWG8pwOVWQyS2A"
+                    },
+                    "message": "User login successful"
+                },
+                "error": {
+                    "status": false,
+                    "error": {
+                        "password": "The Password field is required."
+                    },
+                    "message": "<p>The Password field is required.</p>\n"
+                }
+            }
+        },
+        {
+			"name": "Create Article",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjMiLCJmdWxsX25hbWUiOiJNdWtlc2gzIiwidXNlcm5hbWUiOiJtdWtlc2gzIiwiZW1haWwiOiJtdWtlc2gzQGdtYWlsLmNvcCIsImNyZWF0ZWRfYXQiOiIxNTg4MzQ0MTYxIiwidXBkYXRlZF9hdCI6IjE1ODgzNDQxNjEiLCJ0aW1lIjoxNTg4MzQ1NzQ5fQ.BZQsPNp7e4y4mMivZYvceYTjPFwHOOgJcIkRC1egleA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Article title 1",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "description required 2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ci-conf.local/api-demo/article/create",
+					"protocol": "http",
+					"host": [
+						"ci-conf",
+						"local"
+					],
+					"path": [
+						"api-demo",
+						"article",
+						"create"
+					]
+				}
+			},
+			"response": {
+                "success": {
+                    "status": true,
+                    "message": "Article Add"
+                },
+                "error": {
+                    "status": false,
+                    "error": {
+                        "description": "The Description field is required."
+                    },
+                    "message": "<p>The Description field is required.</p>\n"
+                }
+            }
+		},
+		{
+			"name": "Get Article",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjMiLCJmdWxsX25hbWUiOiJNdWtlc2gzIiwidXNlcm5hbWUiOiJtdWtlc2gzIiwiZW1haWwiOiJtdWtlc2gzQGdtYWlsLmNvcCIsImNyZWF0ZWRfYXQiOiIxNTg4MzQ0MTYxIiwidXBkYXRlZF9hdCI6IjE1ODgzNDQxNjEiLCJ0aW1lIjoxNTg4MzQ1NzQ5fQ.BZQsPNp7e4y4mMivZYvceYTjPFwHOOgJcIkRC1egleA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://ci-conf.local/api-demo/article/get",
+					"protocol": "http",
+					"host": [
+						"ci-conf",
+						"local"
+					],
+					"path": [
+						"api-demo",
+						"article",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": {
+				"success" : {
+					"status": true,
+					"message": "Article list",
+					"data": [
+						{
+							"id": "1",
+							"user_id": "3",
+							"title": "Article title 1",
+							"description": "description required 2",
+							"created_at": "1588399435",
+							"updated_at": "1588399435"
+						},
+						{
+							"id": "2",
+							"user_id": "3",
+							"title": "Article title 2",
+							"description": "description required 2",
+							"created_at": "1588403940",
+							"updated_at": "1588403940"
+						},
+						{
+							"id": "3",
+							"user_id": "3",
+							"title": "Article title 3",
+							"description": "description required 3",
+							"created_at": "1588403946",
+							"updated_at": "1588403946"
+						}
+					]
+				},
+				"error": {
+					"status": false,
+					"message": "Syntax error, malformed JSON"
+				}
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

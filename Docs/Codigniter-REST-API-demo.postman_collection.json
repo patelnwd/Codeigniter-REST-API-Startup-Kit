@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "7fdc9f03-7ed5-424d-a720-27317d83332b",
+		"name": "Codigniter-REST-API-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Article",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjMiLCJmdWxsX25hbWUiOiJNdWtlc2gzIiwidXNlcm5hbWUiOiJtdWtlc2gzIiwiZW1haWwiOiJtdWtlc2gzQGdtYWlsLmNvcCIsImNyZWF0ZWRfYXQiOiIxNTg4MzQ0MTYxIiwidXBkYXRlZF9hdCI6IjE1ODgzNDQxNjEiLCJ0aW1lIjoxNTg4MzQ1NzQ5fQ.BZQsPNp7e4y4mMivZYvceYTjPFwHOOgJcIkRC1egleA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Article title 1",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "description required 2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ci-conf.local/api-demo/article/create",
+					"protocol": "http",
+					"host": [
+						"ci-conf",
+						"local"
+					],
+					"path": [
+						"api-demo",
+						"article",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fullname",
+							"value": "Mukesh3",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "mukesh3",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "mukesh3@gmail.cop",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "mukesh3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ci-conf.local/api-demo/user/register",
+					"protocol": "http",
+					"host": [
+						"ci-conf",
+						"local"
+					],
+					"path": [
+						"api-demo",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "mukesh3",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "mukesh3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ci-conf.local/api-demo/user/login",
+					"protocol": "http",
+					"host": [
+						"ci-conf",
+						"local"
+					],
+					"path": [
+						"api-demo",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Article",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjMiLCJmdWxsX25hbWUiOiJNdWtlc2gzIiwidXNlcm5hbWUiOiJtdWtlc2gzIiwiZW1haWwiOiJtdWtlc2gzQGdtYWlsLmNvcCIsImNyZWF0ZWRfYXQiOiIxNTg4MzQ0MTYxIiwidXBkYXRlZF9hdCI6IjE1ODgzNDQxNjEiLCJ0aW1lIjoxNTg4MzQ1NzQ5fQ.BZQsPNp7e4y4mMivZYvceYTjPFwHOOgJcIkRC1egleA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://ci-conf.local/api-demo/article/get/1",
+					"protocol": "http",
+					"host": [
+						"ci-conf",
+						"local"
+					],
+					"path": [
+						"api-demo",
+						"article",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
