@@ -5,7 +5,7 @@
 
 [Source Code](https://github.com/patelnwd/Codeigniter-REST-API-Startup-Kit)
 
-[Videos](https://youtube.com)
+[Videos](https://www.youtube.com/watch?v=PilQwFEcJXY)
 
 ## Requirements
 
@@ -30,7 +30,7 @@
 
 - Map this domain name in you XAMPP virtual host.
   Goto to path `c:\xampp\apache\conf\extra\` open the file `httpd-vhosts.conf` with notepad ad administrator.
-  
+
   Add this given virtual hosting code in last line of the file.
   ```code
     <VirtualHost *:80>
